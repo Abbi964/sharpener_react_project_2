@@ -1,0 +1,48 @@
+.candy_item{
+    border-bottom: 1px solid #b1b0b0;
+    padding-bottom: 2rem;
+    padding-left: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.candy_item h3{
+    margin-bottom: -17px;
+}
+
+.candy_item p{
+    margin-bottom: -17px;
+    font-style: italic;
+}
+
+.candy_price{
+    color: #c51818
+}
+
+.candy_form input{
+    width: 2.5rem;
+    border-radius: 6px;
+    border: 1px solid #9b9999;
+    padding: 5px;
+    margin-left: 8px;
+    margin-top: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.candy_form label{
+    font-weight: bold;
+}
+
+.candy_form button{
+    padding: 5px 25px 5px 25px;
+    border-radius: 40px;
+    border: none;
+    background-color: #9b1010;
+    color: white;
+    font-weight: bold;
+    margin-left: 17px;
+    
+}
+.candy_form button:hover{
+    background-color: #bd1212;
+}

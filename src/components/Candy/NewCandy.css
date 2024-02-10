@@ -1,0 +1,66 @@
+.new-product {
+  background-color: #e9b1b1;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 66rem;
+  max-width: 95%;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  color: #300404;
+}
+
+.new-product button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #700707;
+  background-color: #700707;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+.new-product button:hover,
+.new-product button:active {
+  background-color: #9e1717;
+  border-color: #9e1717;
+}
+
+.new-product button.alternative {
+  color: #220131;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.new-product button.alternative:hover,
+.new-product button.alternative:active {
+  background-color: #ddb3f8;
+}
+
+.new-product-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.new-product-control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.new-product-control input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.new-product-actions {
+  text-align: right;
+}

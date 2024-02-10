@@ -1,0 +1,27 @@
+.header_card{
+    padding-bottom: 6.2rem;
+}
+
+.nav_bar{
+    display: flex;
+    justify-content: space-between;
+    background: #8f0f0f;
+    padding: 0 10rem 0 10rem;
+    align-items: center;
+
+}
+
+h1{
+    color: white;
+}
+
+.restaurant_banner{
+    aspect-ratio: 16/3.6;
+    overflow: hidden;
+    width: 100%;
+}
+.restaurant_banner img{
+    width: 104%;
+    transform: rotateZ(-4deg) translateY(-31rem) translateX(-1rem);
+}
+
