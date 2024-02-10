@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import CandyItem from "./CandyItem";
 import classes from './CandyList.module.css'
-import CandyContext from "../../../Store/candy-context";
+import CandyContext from "../../../store/candy-context";
 
 function CandyList(props){
 const candyCtx = useContext(CandyContext)

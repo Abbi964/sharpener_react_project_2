@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import classes from './Cart.module.css'
 import Modal from "../UI/Modal";
-import CartContext from "../../Store/cartContext";
+import CartContext from "../../store/cartContext";
 import CartItem from "./CartItem";
 
 function Cart(props){
@@ -29,7 +29,7 @@ function Cart(props){
             </ul>
             <div className={classes.total}>
                 <span>Total Amount</span>
-                <span>${totalAmount}</span>
+                <span>Rs{totalAmount}</span>
             </div>
             <div className={classes.actions}>
                 <button onClick={cartCtx.hideCart} className={classes.button_alt}>Close</button>

@@ -54,4 +54,4 @@ const CartContextProvider = (props) => {
   );
 };
 
-export default CartContextProvider;
+export default CartContextProvider

@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from "react";
 import "./NewCandy.css";
-import CandyContext from "../../Store/candy-context";
+import CandyContext from "../../store/candy-context";
 
 function NewCandy(props) {
     // making ref for inputs

@@ -1,7 +1,7 @@
 import { Fragment, useContext } from 'react';
 import ReactDOM from 'react-dom'
 import classes from './Modal.module.css';
-import CartContext from '../../Store/cartContext';
+import CartContext from '../../store/cartContext';
 
 const BackDrop = (props)=>{
     const cartCtx = useContext(CartContext)

@@ -1,7 +1,7 @@
 import React, { useContext} from "react";
 import classes from './CandyItem.module.css'
-import CandyContext from "../../../Store/candy-context";
-import CartContext from "../../../Store/cartContext";
+import CandyContext from "../../../store/candy-context";
+import CartContext from "../../../store/cartContext";
 
 function CandyItem(props){
     const candyCtx = useContext(CandyContext);
@@ -29,7 +29,7 @@ function CandyItem(props){
         else{
             // first getting item obj from dummyMealsArr from mealsContext
             let result = candyCtx.candyList.filter((candy)=>{
-                return candy.id === id
+                return candy.id === +id
             })
             let candyObj = result[0]
             // now adding item to cartItems
@@ -40,6 +40,15 @@ function CandyItem(props){
                 amount : buyAmount,
             })
         }
+    }
+
+    function deletionHandler(e){
+        let candyId = e.target.parentElement.parentElement.id;
+        // removing item form candy cart
+        cartCtx.removeItem(`c${candyId}`)
+        // removing item from candyList s well as localstorage
+        candyCtx.removeCandy(candyId)
+
     }
 
     return (
@@ -53,7 +62,7 @@ function CandyItem(props){
                 <button onClick={addItemHandler} value={1} type="button">Buy 1</button>
                 <button onClick={addItemHandler} value={2} type="button">Buy 2</button>
                 <button onClick={addItemHandler} value={3} type="button">Buy 3</button><br/>
-                <button className="delBtn" onClick={addItemHandler} type="button">DELETE</button>
+                <button className="delBtn" onClick={deletionHandler} type="button">DELETE</button>
             </div>
         </div>
     )

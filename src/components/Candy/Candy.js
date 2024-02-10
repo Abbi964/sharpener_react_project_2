@@ -1,6 +1,6 @@
 import React from "react";
 import NewCandy from "./NewCandy";
-import CandyContextProvider from "../../Store/CandyContextProvider";
+import CandyContextProvider from "../../store/candyContextProvider";
 import CandyList from "./CandyList/CandyList";
 
 function Candy(){

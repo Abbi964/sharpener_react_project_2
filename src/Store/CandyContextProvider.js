@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CandyContext from "./candy-context";
 
-const CandyContextProvider = (props) => {
+function CandyContextProvider(props) {
   // making a state for candyList
   const [candyList, setCandyList] = useState([]);
 
@@ -22,14 +22,20 @@ const CandyContextProvider = (props) => {
     setCandyList((prevCandyList=>{
       return [...prevCandyList,candyObj]
     }))
-    // if localstorage has candyArray then pushing into that else making new
-    let currentCandyArray = localStorage.getItem("candyArray")
-      ? JSON.parse(localStorage.getItem("candyArray"))
-      : [];
-
-    let newCandyArray = currentCandyArray.concat(candyObj);
     // saving in local storage
-    localStorage.setItem("candyArray", JSON.stringify([...newCandyArray]));
+    localStorage.setItem("candyArray", JSON.stringify([...candyList]));
+  }
+
+  //--------- remove candy handler-------------------------------------------//
+  function removeCandyHandler(id){
+    setCandyList((currList)=>{
+      let newCandyList = currList.filter((candy)=>{
+          return candy.id !== +id
+      })
+      return newCandyList
+    })
+    // making chnges in local storage
+    localStorage.setItem('candyArray',JSON.stringify([...candyList]))
   }
 
   return (
@@ -37,6 +43,7 @@ const CandyContextProvider = (props) => {
       value={{
         candyList: candyList,
         addCandy: addCandyHandler,
+        removeCandy : removeCandyHandler
       }}
     >
       {props.children}

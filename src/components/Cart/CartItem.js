@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import classes from './CartItem.module.css';
-import CartContext from "../../Store/cartContext";
+import CartContext from "../../store/cartContext";
 
 function CartItem(props){
     const cartCtx = useContext(CartContext)
@@ -58,7 +58,7 @@ function CartItem(props){
         <li id={props.id} className={classes.cart_item}>
             <div className={classes.cart_item_details}>
                 <h3>{props.name}</h3>
-                <span className={classes.cart_item_price}>{`$${props.price}`}</span>
+                <span className={classes.cart_item_price}>{`Rs${props.price}`}</span>
                 <span className={classes.cart_item_amount}>{`x ${props.amount}`}</span>
             </div>
             <div className={classes.cart_item_action}>

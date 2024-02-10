@@ -2,7 +2,7 @@ import React, {Fragment ,useContext} from "react";
 import Header from './components/Layout/Header'
 import Candy from "./components/Candy/Candy";
 import Cart from "./components/Cart/Cart";
-import CartContext from "./Store/cartContext";
+import CartContext from "./store/cartContext";
 
 function App() {
   const cartCtx = useContext(CartContext)
