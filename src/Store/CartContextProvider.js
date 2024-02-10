@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CartContext from "./cart-context";
+import CartContext from "./cartContext.js";;
 
 const CartContextProvider = (props) => {
   //------------ making state for showing cart---------------------//

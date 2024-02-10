@@ -11,7 +11,7 @@ const candyCtx = useContext(CandyContext)
         key={candy.id}
         id={candy.id}
         name={candy.name}
-        description={candy.description}
+        description={candy.desc}
         price={candy.price}
         />
     ))

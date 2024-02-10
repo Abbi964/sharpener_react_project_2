@@ -1,22 +1,21 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext} from "react";
 import classes from './CandyItem.module.css'
 import CandyContext from "../../../Store/candy-context";
-import CartContext from "../../../Store/cart-context";
+import CartContext from "../../../Store/cartContext";
 
 function CandyItem(props){
     const candyCtx = useContext(CandyContext);
     const cartCtx = useContext(CartContext)
 
-    // using ref for amount
-    let amountInputRef = useRef()
 
     function addItemHandler(e){
         let id = e.target.parentElement.parentElement.id
+        let buyAmount = e.target.value;
         let already_exists = false;
         // First cheking if item is already in the cart if it is then increasing amount
         let newItemsArr = cartCtx.items.map((item)=>{
             if (item.id === `c${id}`){
-                item.amount = +item.amount + +amountInputRef.current.value
+                item.amount = +item.amount + +buyAmount
                 already_exists = true
                 return item
             }
@@ -38,7 +37,7 @@ function CandyItem(props){
                 id : 'c' + candyObj.id,
                 name : candyObj.name,
                 price : candyObj.price,
-                amount : amountInputRef.current.value,
+                amount : buyAmount,
             })
         }
     }
@@ -48,12 +47,13 @@ function CandyItem(props){
             <div className="candy_detail">
                 <h3>{props.name}</h3>
                 <p>{props.description}</p>
-                <h3 className={classes.candy_price}>{`$${props.price}`}</h3>
+                <h3 className={classes.candy_price}>{`Rs${props.price}`}</h3>
             </div>
-            <div className={classes.candy_form}>
-                <label htmlFor="candy_amount">Amount</label>
-                <input ref={amountInputRef} type="number" defaultValue={1} min='1' id="candy_amount"/><br/>
-                <button onClick={addItemHandler} type="button">+ Add</button>
+            <div className={classes.candy_btn}>
+                <button onClick={addItemHandler} value={1} type="button">Buy 1</button>
+                <button onClick={addItemHandler} value={2} type="button">Buy 2</button>
+                <button onClick={addItemHandler} value={3} type="button">Buy 3</button><br/>
+                <button className="delBtn" onClick={addItemHandler} type="button">DELETE</button>
             </div>
         </div>
     )
